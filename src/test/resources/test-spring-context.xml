@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+	<!-- Data Source: Data source to MySQL connector using for persistence layer. -->
+
+	<beans:bean id="dataSource"
+		class="org.springbyexample.jdbc.datasource.InitializingBasicDataSource">
+		<!-- class="org.springframework.jdbc.datasource.DriverManagerDataSource"> -->
+		<beans:property name="driverClassName" value="org.hsqldb.jdbcDriver" />
+		<beans:property name="url" value="jdbc:hsqldb:mem:testdb" />
+		<beans:property name="username" value="sa" />
+		<beans:property name="password" value="" />
+		<beans:property name="sqlScriptProcessor">
+			<beans:bean class="org.springbyexample.jdbc.core.SqlScriptProcessor">
+				<beans:property name="sqlScripts">
+					<beans:list>
+						<beans:value>classpath:test-schema.sql</beans:value>
+					</beans:list>
+				</beans:property>
+			</beans:bean>
+		</beans:property>
+
+	</beans:bean>
+
+	<!-- Application Config: Persistence, Entities, DAOs and Services to testing -->
+
+	<!-- SessionFactory Bean definition: Spring and Hibernate 4 -->
+	<beans:bean id="hibernate4AnnotatedSessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<beans:property name="dataSource" ref="dataSource" />
+		<beans:property name="annotatedClasses">
+			<!--Entities mapped -->
+			<beans:list>
+				<beans:value>com.daro.persistence.generic.testdata.PersonEntity</beans:value>
+			</beans:list>
+		</beans:property>
+		<beans:property name="hibernateProperties">
+			<!-- MySQL Dialect -->
+			<beans:props>
+				<beans:prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect
+				</beans:prop>
+				<beans:prop key="hibernate.show_sql">true</beans:prop>
+			</beans:props>
+		</beans:property>
+	</beans:bean>
+
+	<!-- Transaction Manager: Annotation -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<!-- Transaction Manager: Spring and Hibernate 4 -->
+	<beans:bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<beans:property name="sessionFactory"
+			ref="hibernate4AnnotatedSessionFactory" />
+	</beans:bean>
+
+	<!-- DAO injection definition: PersonEntity DAO to test -->
+	<beans:bean id="personDAO"
+		class="com.daro.persistence.generic.testdata.PersonEntityDaoImpl">
+		<beans:property name="sessionFactory"
+			ref="hibernate4AnnotatedSessionFactory" />
+	</beans:bean>
+
+	<!-- Service injection definition: PersonEntity Service to test -->
+	<beans:bean id="personService"
+		class="com.daro.persistence.generic.testdata.PersonEntityServiceImpl">
+		<beans:property name="dao" ref="personDAO"></beans:property>
+	</beans:bean>
+
+</beans:beans>
+		
