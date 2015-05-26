@@ -18,7 +18,7 @@
 			<comments>Author Dario Palminio</comments>
 		</license>
 	</licenses>
-	
+
 	<properties>
 		<!-- Eclipse Luna Service Release 1 (version 4.4.1) -->
 		<java-version>1.7</java-version>
@@ -210,5 +210,20 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<developers>
+		<developer>
+			<id>dariopalminio</id>
+			<name>Dario Palminio</name>
+			<email>dariopalminio@gmail.com</email>
+			<url>http://www.palminio.com.ar</url>
+			<organization>Dario Palminio</organization>
+			<organizationUrl>http://www.palminio.com.ar</organizationUrl>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+		</developer>
+	</developers>
 
 </project>
