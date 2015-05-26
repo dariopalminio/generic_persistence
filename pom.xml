@@ -19,8 +19,13 @@
 		</license>
 	</licenses>
 
+	<prerequisites>
+	    <!-- Java 7 -->
+	    <!-- IDE Eclipse Luna Service Release 1 (version 4.4.1) or similar -->
+		<maven>2.2.1</maven>
+	</prerequisites>
+
 	<properties>
-		<!-- Eclipse Luna Service Release 1 (version 4.4.1) -->
 		<java-version>1.7</java-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<hibernate-core.version>4.3.5.Final</hibernate-core.version>
