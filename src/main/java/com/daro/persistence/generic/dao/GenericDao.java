@@ -7,9 +7,8 @@ package com.daro.persistence.generic.dao;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
-
 import org.hibernate.SessionFactory;
-import org.slf4j.Logger;
+
 
 
 /**

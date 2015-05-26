@@ -14,8 +14,24 @@
 		<license>
 			<name>GPLv3</name>
 			<url>http://www.gnu.org/copyleft/gpl.html</url>
-			<distribution>SNAPSHOT</distribution>
-			<comments>Author Dario Palminio</comments>
+			<distribution>GenericPersistence SNAPSHOT</distribution>
+			<comments>Copyright (C) 2015 Dario Palminio</comments>
+			<!-- 
+	GenericPersistence is a java component to persistence layer.
+			
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+			-->
 		</license>
 	</licenses>
 
@@ -33,10 +49,11 @@
 		<hibernate-jpa-2.0-api.version>1.0.0.Final</hibernate-jpa-2.0-api.version>
 		<org.springframework-version>4.0.3.RELEASE</org.springframework-version>
 		<org.springbyexample.version>1.0.4</org.springbyexample.version>
-		<slf4j.version>1.7.5</slf4j.version>
 		<junit.version>4.8.1</junit.version>
-		<log4j.version>1.2.17</log4j.version>
 		<hsqldb.version>2.2.8</hsqldb.version>
+		<slf4j.version>1.7.5</slf4j.version>
+		<log4j.version>1.2.17</log4j.version>
+		<commons-logging.version>1.1.1</commons-logging.version>
 		<maven-compiler-plugin.version>2.5.1</maven-compiler-plugin.version>
 	</properties>
 
@@ -59,7 +76,7 @@
 
 	<dependencies>
 
-		<!-- Hibernate -->
+		<!-- Hibernate Core -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
@@ -74,19 +91,21 @@
 			<version>${hibernate-core.version}</version>
 		</dependency>
 
+		<!-- Hibernate Validator -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
 			<version>${hibernate-validator.version}</version>
 		</dependency>
-
+		
+		<!-- Hibernate JPA -->
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
 			<artifactId>hibernate-jpa-2.0-api</artifactId>
 			<version>${hibernate-jpa-2.0-api.version}</version>
 		</dependency>
 
-		<!-- Spring -->
+		<!-- Spring Context -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -100,13 +119,14 @@
 			</exclusions>
 		</dependency>
 
+		<!-- Spring Beans -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-beans</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
 
-		<!--Aspect Oriented Programming (AOP) Framework (depends on spring-core, 
+		<!-- Spring Aspect Oriented Programming (AOP) Framework (depends on spring-core, 
 			spring-beans) Define this if you use Spring AOP APIs (org.springframework.aop.*) -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -114,6 +134,7 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 
+		<!-- Spring JDBC -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
@@ -138,6 +159,7 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 
+		<!-- Spring Test -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
@@ -167,19 +189,23 @@
 			<artifactId>log4j</artifactId>
 			<version>${log4j.version}</version>
 		</dependency>
-
+		
+		<!-- Apache Commons Logging 
+		used to org.apache.commons.logging.LogFactory -->
 		<dependency>
 			<groupId>commons-logging</groupId>
 			<artifactId>commons-logging</artifactId>
-			<version>1.1.1</version>
+			<version>${commons-logging.version}</version>
 		</dependency>
 
+		<!-- HSQL DB -->
 		<dependency>
 			<groupId>org.hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
 			<version>${hsqldb.version}</version>
 		</dependency>
 
+		<!-- Spring by Example JDBC -->
 		<dependency>
 			<groupId>org.springbyexample</groupId>
 			<artifactId>org.springbyexample.jdbc</artifactId>

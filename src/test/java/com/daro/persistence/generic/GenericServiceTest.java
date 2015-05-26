@@ -29,6 +29,7 @@ public class GenericServiceTest {
 	
 	/**
 	 * Test if injection by Autowired is ok.
+	 * personEntityService is injected from test-spring-context.xml
 	 */
 	@Test
 	public void testPersonEntityServiceAutowired() {
@@ -40,7 +41,7 @@ public class GenericServiceTest {
 	 */
 	@Test
 	@Transactional
-	public void testPersonEntityService() {
+	public void testPersonEntityServiceAdd() {
 		
 		String name = "name-test";
 		String lastName = "lastname-test";
@@ -60,4 +61,32 @@ public class GenericServiceTest {
 		
 	}
 
+	/**
+	 * Test remove method of GenericService class.
+	 */
+	@Test
+	@Transactional
+	public void testPersonEntityServiceRemove() {
+		
+		String name = "name-test";
+		String lastName = "lastname-test";
+		String dni = "00000000";
+		
+		PersonEntity personEntity = new PersonEntity();
+		personEntity.setFirstName(name);
+		personEntity.setLastName(lastName);
+		personEntity.setDniCode(dni);
+		
+		personEntityService.add(personEntity);
+		PersonEntity personEntityFound = personEntityService.getByField("firstName", "name-test");
+		
+		assertNotNull(personEntityFound);
+		assertTrue(lastName.equals(personEntityFound.getLastName()));
+		assertEquals(personEntityFound.getDniCode(), dni);
+		
+		personEntityService.remove(personEntityFound);
+		PersonEntity personEntityFound2 = personEntityService.getByField("firstName", "name-test");
+		assertNull(personEntityFound2);		
+	}
+	
 }
