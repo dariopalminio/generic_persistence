@@ -17,7 +17,7 @@
 		<hibernate-validator.version>4.3.0.Final</hibernate-validator.version>
 		<hibernate-jpa-2.0-api.version>1.0.0.Final</hibernate-jpa-2.0-api.version>
 		<org.springframework-version>4.0.3.RELEASE</org.springframework-version>
-	    <org.springbyexample.version>1.0.4</org.springbyexample.version>
+		<org.springbyexample.version>1.0.4</org.springbyexample.version>
 		<slf4j.version>1.7.5</slf4j.version>
 		<junit.version>4.8.1</junit.version>
 		<log4j.version>1.2.17</log4j.version>		
@@ -25,19 +25,20 @@
 	</properties>
 
 	<repositories>
+	
+		<repository>
+			<id>ibiblio.org</id>
+			<name>ibiblio.org</name>
+			<url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url>
+		</repository>
+		
 		<repository>
 			<id>springbyexample.org</id>
 			<name>Spring by Example</name>
 			<url>http://www.springbyexample.org/maven/repo</url>
 			<!-- Used for org.springbyexample.jdbc.core.SqlScriptProcessor in org.springbyexample.jdbc -->
 		</repository>
-
-		<repository>
-			<id>ibiblio.org</id>
-			<name>ibiblio.org</name>
-			<url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url>
-		</repository>
-
+		
 	</repositories>
 
 	<dependencies>
