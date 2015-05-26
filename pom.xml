@@ -10,7 +10,17 @@
 	<name>GenericPersistence</name>
 	<url>http://maven.apache.org</url>
 
+	<licenses>
+		<license>
+			<name>GPLv3</name>
+			<url>http://www.gnu.org/copyleft/gpl.html</url>
+			<distribution>SNAPSHOT</distribution>
+			<comments>Author Dario Palminio</comments>
+		</license>
+	</licenses>
+	
 	<properties>
+		<!-- Eclipse Luna Service Release 1 (version 4.4.1) -->
 		<java-version>1.7</java-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<hibernate-core.version>4.3.5.Final</hibernate-core.version>
@@ -20,26 +30,26 @@
 		<org.springbyexample.version>1.0.4</org.springbyexample.version>
 		<slf4j.version>1.7.5</slf4j.version>
 		<junit.version>4.8.1</junit.version>
-		<log4j.version>1.2.17</log4j.version>		
-		<hsqldb.version>2.2.8</hsqldb.version>	
+		<log4j.version>1.2.17</log4j.version>
+		<hsqldb.version>2.2.8</hsqldb.version>
 		<maven-compiler-plugin.version>2.5.1</maven-compiler-plugin.version>
 	</properties>
 
 	<repositories>
-	
+
 		<repository>
 			<id>ibiblio.org</id>
 			<name>ibiblio.org</name>
 			<url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url>
 		</repository>
-		
+
 		<repository>
 			<id>springbyexample.org</id>
 			<name>Spring by Example</name>
 			<url>http://www.springbyexample.org/maven/repo</url>
 			<!-- Used for org.springbyexample.jdbc.core.SqlScriptProcessor in org.springbyexample.jdbc -->
 		</repository>
-		
+
 	</repositories>
 
 	<dependencies>
