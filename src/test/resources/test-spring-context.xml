@@ -5,8 +5,8 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
-	<!-- Data Source: Data source to HSQLDB connector using for persistence layer. -->
-
+	<!-- Data Source: dataSource to HSQLDB connector used for persistence layer. -->
+	<!--              Use org.springbyexample to initialize HSQLDB               -->
 	<beans:bean id="dataSource"
 		class="org.springbyexample.jdbc.datasource.InitializingBasicDataSource">
 		<!-- class="org.springframework.jdbc.datasource.DriverManagerDataSource"> -->
