@@ -5,7 +5,7 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
-	<!-- Data Source: Data source to MySQL connector using for persistence layer. -->
+	<!-- Data Source: Data source to HSQLDB connector using for persistence layer. -->
 
 	<beans:bean id="dataSource"
 		class="org.springbyexample.jdbc.datasource.InitializingBasicDataSource">
@@ -18,6 +18,7 @@
 			<beans:bean class="org.springbyexample.jdbc.core.SqlScriptProcessor">
 				<beans:property name="sqlScripts">
 					<beans:list>
+						<!-- HSQLDB is initialized with test-schema.sql file -->
 						<beans:value>classpath:test-schema.sql</beans:value>
 					</beans:list>
 				</beans:property>
@@ -44,6 +45,8 @@
 				<beans:prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect
 				</beans:prop>
 				<beans:prop key="hibernate.show_sql">true</beans:prop>
+				<beans:prop key="hibernate.hbm2ddl.auto">create</beans:prop>            
+                <beans:prop key="hibernate.connection.shutdown">true</beans:prop>
 			</beans:props>
 		</beans:property>
 	</beans:bean>

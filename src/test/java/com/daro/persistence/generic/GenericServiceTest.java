@@ -2,13 +2,16 @@ package com.daro.persistence.generic;
 
 import static org.junit.Assert.*;
 
-import org.hibernate.Session;
+
+import java.util.List;
 import org.hibernate.SessionFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.daro.persistence.generic.dao.PersistenceException;
@@ -16,14 +19,21 @@ import com.daro.persistence.generic.testdata.PersonEntity;
 import com.daro.persistence.generic.testdata.PersonEntityService;
 
 /**
- * Test GenericService.
+ * Test persistence with GenericService.
+ * This also test the GenericDaoImpl class because the class GenericService uses 
+ * GenericDaoImpl to persist.
+ * The different test cases are not completely independent or atomics because they 
+ * work on the same temporal database in memory.
+ * The temporal database in memory is configured by "classpath:test-spring-context.xml" file.
+ * This test uses HSQLDB database. HSQLDB (HyperSQL DataBase) is the leading SQL relational 
+ * database software written in Java. HSQLDB is initialized with test-schema.sql file.
  * 
  * @author dario.palminio
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:test-spring-context.xml")
-//@TransactionConfiguration(defaultRollback = true)
+@TransactionConfiguration(defaultRollback = true)
 @Transactional
 public class GenericServiceTest {
 	
@@ -40,27 +50,44 @@ public class GenericServiceTest {
 	}
 	
 	/**
-	 * Test add and getByField method of GenericService class.
+	 * Test add, update, getById and getByField method of GenericService class.
 	 */
 	@Test
 	@Transactional
-	public void testPersonEntityServiceAdd() throws PersistenceException {
+	public void testPersonEntityService() throws PersistenceException {
 		
+		//Data to test
 		String name = "name-test";
 		String lastName = "lastname-test";
-		String dni = "00000000";
-		
+		String dni = "00000000";	
+		String dni2 = "11000111";
 		PersonEntity personEntity = new PersonEntity();
 		personEntity.setFirstName(name);
 		personEntity.setLastName(lastName);
 		personEntity.setDniCode(dni);
 		
+		//Test add method
 		personEntityService.add(personEntity);
-		PersonEntity personEntityFound = personEntityService.getByField("firstName", "name-test");
 		
+		//Test getByField method
+		PersonEntity personEntityFound = personEntityService.getByField("firstName", "name-test");
 		assertNotNull(personEntityFound);
 		assertTrue(lastName.equals(personEntityFound.getLastName()));
 		assertEquals(personEntityFound.getDniCode(), dni);
+		
+		//Test update method
+		personEntityFound.setDniCode(dni2);
+		personEntityService.update(personEntityFound);
+		
+		//Test getById method
+		PersonEntity personEntityFound2 = personEntityService.getById(personEntityFound.getId());
+		assertEquals(personEntityFound2.getDniCode(), dni2);
+		
+		//Test list method
+		List<PersonEntity> list = null;
+		list = personEntityService.list();
+		assertNotNull(list);
+		assertEquals(list.size(),1);
 		
 	}
 
