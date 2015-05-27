@@ -7,6 +7,7 @@ package com.daro.persistence.generic.dao;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
+
 import org.hibernate.SessionFactory;
 
 
@@ -21,14 +22,15 @@ public interface GenericDao<T extends Serializable> {
 
 	public void setSessionFactory(SessionFactory sessionFactory);
 	public SessionFactory getSessionFactory();
-	public void add(T p);
-	public void update(T p);
-	public List<T> list();
-	public T getById(Long id);
-	public T getByField(String fieldName, String value);
-	public void removeById(Long id);
-	public void remove(T t);
-	public List<T> search(Map<String, Object> parameterMap);
-	
+	public void add(T p) throws PersistenceException;
+	public void update(T p) throws PersistenceException;
+	public List<T> list() throws PersistenceException;
+	public T getById(Long id) throws PersistenceException;
+	public T getByField(String fieldName, String value) throws PersistenceException;
+	public void removeById(Long id) throws PersistenceException;
+	public void remove(T t) throws PersistenceException;
+	public List<T> search(Map<String, Object> parameterMap) throws PersistenceException;
+	public void setLoggerInfoEnabled(boolean loggerEnabled);
+	public boolean isLoggerInfoEnabled();
 }
 
