@@ -9,8 +9,13 @@ import com.daro.persistence.generic.error.PersistenceErrors;
 public class PersistenceErrorsTest {
 
 	@Test
-	public void testPersonEntityServiceAutowired() {
+	public void testGetWord() {
 		assertEquals(PersistenceErrors.ENTITY_NULL.getWord(), "ENTITY_NULL");
+	}
+	
+	@Test
+	public void testToString() {
+		assertEquals(PersistenceErrors.ENTITY_NULL.toString(), PersistenceErrors.ENTITY_NULL.getMessage());
 	}
 	
 }

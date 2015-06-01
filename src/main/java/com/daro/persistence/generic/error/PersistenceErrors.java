@@ -39,6 +39,11 @@ public enum PersistenceErrors {
 		return message;
 	}
 	
+	/**
+	 * Get dictionary word
+	 * 
+	 * @return String
+	 */
 	public String getWord() {
 		return this.name();
 	}
@@ -47,4 +52,5 @@ public enum PersistenceErrors {
 	public String toString(){
 		return this.getMessage();		
 	}
+	
 }
