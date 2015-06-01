@@ -12,8 +12,8 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.daro.persistence.generic.dao.PersistenceException;
 import com.daro.persistence.generic.dao.GenericDao;
+import com.daro.persistence.generic.error.PersistenceException;
 
 
 

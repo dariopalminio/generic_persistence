@@ -2,19 +2,19 @@ package com.daro.persistence.generic;
 
 import static org.junit.Assert.*;
 
-
 import java.util.List;
+
 import org.hibernate.SessionFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.daro.persistence.generic.dao.PersistenceException;
+import com.daro.persistence.generic.error.PersistenceErrors;
+import com.daro.persistence.generic.error.PersistenceException;
 import com.daro.persistence.generic.testdata.PersonEntity;
 import com.daro.persistence.generic.testdata.PersonEntityService;
 
@@ -134,7 +134,8 @@ public class GenericServiceTest {
 			exeption = e;
 		}
 		assertNotNull(exeption);
-		assertEquals(exeption.getMessage(), PersistenceException.ENTITY_NULL);
+		PersistenceErrors error = PersistenceErrors.ENTITY_NULL;
+		assertEquals(exeption.getMessage(), error.getMessage());
 		
 		//Test when Session Factory is null
 		exeption = null;
@@ -146,7 +147,8 @@ public class GenericServiceTest {
 			exeption = e;
 		}
 		assertNotNull(exeption);
-		assertEquals(exeption.getMessage(), PersistenceException.SESSION_FACTORY_NULL);
+		error = PersistenceErrors.SESSION_FACTORY_NULL;
+		assertEquals(exeption.getMessage(), error.getMessage());
 		personEntityService.setSessionFactory(sessionFactory);
 	}
 	
@@ -165,7 +167,8 @@ public class GenericServiceTest {
 			exeption = e;
 		}
 		assertNotNull(exeption);
-		assertEquals(exeption.getMessage(), PersistenceException.ENTITY_NULL);
+		PersistenceErrors error = PersistenceErrors.ENTITY_NULL;
+		assertEquals(exeption.getMessage(), error.getMessage());
 		
 		//Test when Session Factory is null		
 		exeption = null;
@@ -177,7 +180,8 @@ public class GenericServiceTest {
 			exeption = e;
 		}
 		assertNotNull(exeption);
-		assertEquals(exeption.getMessage(), PersistenceException.SESSION_FACTORY_NULL);
+		error = PersistenceErrors.SESSION_FACTORY_NULL;
+		assertEquals(exeption.getMessage(), error.getMessage());
 		personEntityService.setSessionFactory(sessionFactory);
 	}
 	

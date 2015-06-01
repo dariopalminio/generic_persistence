@@ -10,6 +10,8 @@ import java.util.Map;
 
 import org.hibernate.SessionFactory;
 
+import com.daro.persistence.generic.error.PersistenceException;
+
 
 
 /**

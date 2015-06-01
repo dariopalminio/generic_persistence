@@ -9,12 +9,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Repository;
+
+import com.daro.persistence.generic.error.PersistenceErrors;
+import com.daro.persistence.generic.error.PersistenceException;
 
 /**
  * GenericDaoImpl
@@ -69,13 +73,13 @@ public abstract class GenericDaoImpl<T extends Serializable> implements
 			session.persist(p);
 		}catch(java.lang.IllegalArgumentException illegalArgumentEx){
 			logger.error("Persistence layer error: " + illegalArgumentEx.getStackTrace());
-			String msg;
+			PersistenceErrors error;
 			if (p == null) {
-				msg = PersistenceException.ENTITY_NULL;
+				error = PersistenceErrors.ENTITY_NULL;
 			}else{
-				msg = illegalArgumentEx.getMessage();
+				error = PersistenceErrors.UNIDENTIFIED_ERROR; //illegalArgumentEx.getMessage();
 			}
-			throw new PersistenceException(msg, illegalArgumentEx.getCause());
+			throw new PersistenceException(error, illegalArgumentEx.getCause());
 		}
 		
 		if (loggerInfoEnabled)
@@ -97,13 +101,13 @@ public abstract class GenericDaoImpl<T extends Serializable> implements
 			session.merge(p);
 		}catch(java.lang.IllegalArgumentException illegalArgumentEx){
 			logger.error("Persistence layer error: " + illegalArgumentEx.getStackTrace());
-			String msg;
+			PersistenceErrors error;
 			if (p == null) {
-				msg = PersistenceException.ENTITY_NULL;
+				error = PersistenceErrors.ENTITY_NULL;
 			}else{
-				msg = illegalArgumentEx.getMessage();
+				error = PersistenceErrors.UNIDENTIFIED_ERROR; // illegalArgumentEx.getMessage();
 			}
-			throw new PersistenceException(msg, illegalArgumentEx.getCause());
+			throw new PersistenceException(error, illegalArgumentEx.getCause());
 		}
 		
 		if (loggerInfoEnabled)
@@ -147,8 +151,8 @@ public abstract class GenericDaoImpl<T extends Serializable> implements
 		Session session = this.getCurrentSession();
 		
 		if (id == null) {
-			logger.error("Persistence layer error: Illegal Argument in getById method, Id is null (" + PersistenceException.ARGUMENT_NULL + ")");
-			throw new PersistenceException(PersistenceException.ARGUMENT_NULL);
+			logger.error("Persistence layer error: Illegal Argument in getById method, Id is null (" + PersistenceErrors.ARGUMENT_NULL.getMessage() + ")");
+			throw new PersistenceException(PersistenceErrors.ARGUMENT_NULL);
 		}
 		
 		T t = (T) session.load(clazz, id.longValue());
@@ -302,10 +306,11 @@ public abstract class GenericDaoImpl<T extends Serializable> implements
 			session = this.sessionFactory.getCurrentSession();
 		}catch(java.lang.NullPointerException nullPpointEx){
 			logger.error("Persistence layer error: " + nullPpointEx.getStackTrace());
-			throw new PersistenceException(PersistenceException.SESSION_FACTORY_NULL, nullPpointEx.getCause());
+			throw new PersistenceException(PersistenceErrors.SESSION_FACTORY_NULL, nullPpointEx.getCause());
 		}catch(Exception ex){
 			logger.error("Persistence layer error: " + ex.getStackTrace());
-			throw new PersistenceException(ex.getMessage(),ex.getCause());
+			PersistenceErrors error = PersistenceErrors.UNIDENTIFIED_ERROR;
+			throw new PersistenceException(error, ex.getCause());
 		}
 		
 		return session;
