@@ -33,6 +33,7 @@ Documentation control
 \cline{1-4}
 \multicolumn{1}{|l|}{Date}       & \multicolumn{1}{l|}{Author}         & \multicolumn{1}{l|}{Version} & \multicolumn{1}{l|}{Detail}   &  \\ \cline{1-4}
 \multicolumn{1}{|l|}{05/05/2015} & \multicolumn{1}{l|}{Dario Palminio} & \multicolumn{1}{l|}{1.0}     & \multicolumn{1}{l|}{Creation} &  \\ \cline{1-4}
+\multicolumn{1}{|l|}{04/06/2015} & \multicolumn{1}{l|}{Dario Palminio} & \multicolumn{1}{l|}{1.0}     & \multicolumn{1}{l|}{Add info} &  \\ \cline{1-4}
                                  &                                     &                              &                               &  \\
                                  &                                     &                              &                               & 
 \end{tabular}
@@ -42,7 +43,9 @@ Documentation control
 \tableofcontents
 
 \chapter{Introduction}
-Generic Persistence is un component (package) that implements DAO Generic Persistence in Java.
+Generic Persistence is un component (package) that implements CRUD (Create, read, update and delete) into DAO (Data Access Object) Generic Persistence in Java. This component uses Hibernate as an Object-Relational Mapping (ORM) framework, Hibernate is concerned with data persistence as it applies to relational databases (via JDBC). This component was designed to deliver a highly scalable architecture and reuse capability. This is configurable and extensible. This integrate hibernate with Spring application. With Hibernate framework, we provide all the database information using anotations and files. We can provide all the information (data source, JDBC connector and mapping) in an Application Context file (xml) from application that uses this library component.
+
+The advantage of using this library component is the relatively simple and rigorous separation between two important parts of an application that can but should not know anything of each other, and which can be expected to evolve frequently and independently. This library component act as an intermediary between the application and the database persistence (CRUD generic on DAO).
 
 \section{Purpose of the document}
 The purpose of this document is to show the general architecture of a Java component called "Daro Generic Persistence".
