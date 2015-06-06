@@ -11,7 +11,7 @@
 		class="org.springbyexample.jdbc.datasource.InitializingBasicDataSource">
 		<!-- class="org.springframework.jdbc.datasource.DriverManagerDataSource"> -->
 		<beans:property name="driverClassName" value="org.hsqldb.jdbcDriver" />
-		<beans:property name="url" value="jdbc:hsqldb:mem:testdb" />
+		<beans:property name="url" value="jdbc:hsqldb:mem:TESTDB" />
 		<beans:property name="username" value="sa" />
 		<beans:property name="password" value="" />
 		<beans:property name="sqlScriptProcessor">

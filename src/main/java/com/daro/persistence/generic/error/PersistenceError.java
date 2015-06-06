@@ -15,7 +15,7 @@ public enum PersistenceError {
 	/**
 	 * List of errors code and messages
 	 */
-	UNIDENTIFIED_ERROR(0, "UNIDENTIFIED ERROR!"),
+	PERSISTENCE_INTERNAL_ERROR(0, "UNIDENTIFIED ERROR!"),
 	ENTITY_NULL(1, "Can not persist a null entity!"),
 	SESSION_FACTORY_NULL(2, "Can not get SessionFactory because SessionFactory is null."),
 	ARGUMENT_NULL(3, "The argument is null!"),

@@ -38,11 +38,12 @@ public class PersistenceException extends Exception {
 
 	public PersistenceException(Throwable cause){
 		super(cause);
+		this.persistenceErrors = persistenceErrors.PERSISTENCE_INTERNAL_ERROR;
 	}
 
 	public PersistenceException(PersistenceError persistenceErrors, Throwable cause){
 		super(persistenceErrors.getMessage(), cause);
-		this.persistenceErrors=persistenceErrors;
+		this.persistenceErrors = persistenceErrors;
 	}
 
 	public PersistenceError getPersistenceErrors() {

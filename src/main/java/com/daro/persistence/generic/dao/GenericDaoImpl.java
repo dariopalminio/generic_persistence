@@ -42,26 +42,32 @@ public abstract class GenericDaoImpl<T extends Serializable> implements
 
 	private SessionFactory sessionFactory;
 
-	/**
-	 * Constructor without parameters
-	 */
-	public SessionFactory getSessionFactory() {
-		return sessionFactory;
-	}
-	
+    /**
+     * Default Constructor
+     */
+    protected GenericDaoImpl() {
+    }
+    
 	/**
 	 * Constructor with parameters
 	 * 
 	 * @param clazz
 	 * @param sessionFactory
 	 */
-	public void setSessionFactory(Class<T> clazz, SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
+	protected GenericDaoImpl(Class<T> clazz, SessionFactory sessionFactory) {
 		this.clazz = clazz;
+		this.sessionFactory = sessionFactory;
 	}	
+
+	/**
+	 * Get SessionFactory
+	 */
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
 	
 	/**
-	 * Constructor with sessionFactory as parameter
+	 * Set SessionFactory
 	 * 
 	 * @param clazz
 	 * @param sessionFactory
@@ -99,7 +105,7 @@ public abstract class GenericDaoImpl<T extends Serializable> implements
 			if (p == null) {
 				error = PersistenceError.ENTITY_NULL;
 			}else{
-				error = PersistenceError.UNIDENTIFIED_ERROR; //illegalArgumentEx.getMessage();
+				error = PersistenceError.PERSISTENCE_INTERNAL_ERROR;
 			}
 			throw new PersistenceException(error, illegalArgumentEx.getCause());
 		}
@@ -127,7 +133,7 @@ public abstract class GenericDaoImpl<T extends Serializable> implements
 			if (p == null) {
 				error = PersistenceError.ENTITY_NULL;
 			}else{
-				error = PersistenceError.UNIDENTIFIED_ERROR; // illegalArgumentEx.getMessage();
+				error = PersistenceError.PERSISTENCE_INTERNAL_ERROR;
 			}
 			throw new PersistenceException(error, illegalArgumentEx.getCause());
 		}
@@ -387,7 +393,7 @@ public abstract class GenericDaoImpl<T extends Serializable> implements
 			throw new PersistenceException(PersistenceError.SESSION_FACTORY_NULL, nullPpointEx.getCause());
 		}catch(Exception ex){
 			logger.error("Persistence layer error: " + ex.getStackTrace());
-			PersistenceError error = PersistenceError.UNIDENTIFIED_ERROR;
+			PersistenceError error = PersistenceError.PERSISTENCE_INTERNAL_ERROR;
 			throw new PersistenceException(error, ex.getCause());
 		}
 		
