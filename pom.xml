@@ -44,7 +44,6 @@
 		<org.springbyexample.version>1.0.4</org.springbyexample.version>
 		<jmockit.version>1.6</jmockit.version>
 		<junit.version>4.8.2</junit.version>
-		<jmockit.coverage.version>0.999.25</jmockit.coverage.version>
 		<hsqldb.version>2.2.8</hsqldb.version>
 		<slf4j.version>1.7.5</slf4j.version>
 		<log4j.version>1.2.17</log4j.version>
