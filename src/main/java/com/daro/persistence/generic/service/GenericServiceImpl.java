@@ -18,14 +18,18 @@ import com.daro.persistence.generic.error.PersistenceException;
 
 
 /**
+ * Generic Service Implementation.
+ * This works as a bridge between the service client and the DAO.
+ * 
  * @author Dario Palminio
  * 
+ * @param <T> Data type expected in query return as entity
  */
 @Service
 public abstract class GenericServiceImpl<T extends Serializable> implements GenericService<T>{
 	
 
-	protected GenericDao<T> dao;
+	protected GenericDao<T> dao; //persistence object
 
 	public void setDao(GenericDao<T> dao) {
 		this.dao = dao;
@@ -90,8 +94,19 @@ public abstract class GenericServiceImpl<T extends Serializable> implements Gene
 	@Override
 	@Transactional
 	public List<T> search(Map<String, Object> parameterMap) throws PersistenceException {
-		// TODO Auto-generated method stub
 		return this.dao.search(parameterMap);
+	}
+	
+	@Override
+	@Transactional
+	public T executeSqlQuery(String sql) throws PersistenceException{
+		return this.dao.executeSqlQuery(sql);
+	}
+	
+	@Override
+	@Transactional
+	public T executeSqlQuery(String sql, List<String> params) throws PersistenceException{
+		return this.dao.executeSqlQuery(sql, params);		
 	}
 	
 	@Override

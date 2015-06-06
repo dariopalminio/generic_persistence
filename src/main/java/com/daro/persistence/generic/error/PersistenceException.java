@@ -18,12 +18,20 @@ public class PersistenceException extends Exception {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	PersistenceErrors persistenceErrors;
+	private PersistenceError persistenceErrors;
 	
+	/**
+	 * Constructor.
+	 */
 	public PersistenceException(){
 	}
 
-	public PersistenceException(PersistenceErrors persistenceErrors){
+	/**
+	 * Constructor with parameter.
+	 * 
+	 * @param persistenceErrors
+	 */
+	public PersistenceException(PersistenceError persistenceErrors){
 		super(persistenceErrors.getMessage());
 		this.persistenceErrors=persistenceErrors;
 	}
@@ -32,16 +40,16 @@ public class PersistenceException extends Exception {
 		super(cause);
 	}
 
-	public PersistenceException(PersistenceErrors persistenceErrors, Throwable cause){
+	public PersistenceException(PersistenceError persistenceErrors, Throwable cause){
 		super(persistenceErrors.getMessage(), cause);
 		this.persistenceErrors=persistenceErrors;
 	}
 
-	public PersistenceErrors getPersistenceErrors() {
+	public PersistenceError getPersistenceErrors() {
 		return persistenceErrors;
 	}
 
-	public void setPersistenceErrors(PersistenceErrors persistenceErrors) {
+	public void setPersistenceErrors(PersistenceError persistenceErrors) {
 		this.persistenceErrors = persistenceErrors;
 	}
 

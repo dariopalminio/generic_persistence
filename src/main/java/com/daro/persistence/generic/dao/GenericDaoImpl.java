@@ -11,42 +11,64 @@ import java.util.Map;
 import java.util.Set;
 
 import org.hibernate.Criteria;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Repository;
 
-import com.daro.persistence.generic.error.PersistenceErrors;
+import com.daro.persistence.generic.error.PersistenceError;
 import com.daro.persistence.generic.error.PersistenceException;
 
 /**
- * GenericDaoImpl
+ * Generic DAO Implementation
  * 
  * Implements persistence in a data source using a Hibernate Session Factory.
  * 
  * @author Dario Palminio
  * 
+ * @param <T> Data type expected in query return as entity
  */
 @Repository
 public abstract class GenericDaoImpl<T extends Serializable> implements
 		GenericDao<T> {
 
-	public boolean loggerInfoEnabled = true; //Information logging
+	public boolean loggerInfoEnabled = true; //information logging
 
 	private Logger logger;
 
-	private Class<T> clazz;
+	private Class<T> clazz; //entity class expected in query return
 
 	private SessionFactory sessionFactory;
 
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}		
-
+	/**
+	 * Constructor without parameters
+	 */
 	public SessionFactory getSessionFactory() {
 		return sessionFactory;
 	}
+	
+	/**
+	 * Constructor with parameters
+	 * 
+	 * @param clazz
+	 * @param sessionFactory
+	 */
+	public void setSessionFactory(Class<T> clazz, SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+		this.clazz = clazz;
+	}	
+	
+	/**
+	 * Constructor with sessionFactory as parameter
+	 * 
+	 * @param clazz
+	 * @param sessionFactory
+	 */
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}		
 
 	/**
 	 * Set specific T class for Java Generic.
@@ -61,7 +83,7 @@ public abstract class GenericDaoImpl<T extends Serializable> implements
 	/**
 	 * Persist new entity p.
 	 * 
-	 * @param p
+	 * @param p Data type of entity.
 	 * @throws PersistenceException
 	 */
 	@Override
@@ -73,11 +95,11 @@ public abstract class GenericDaoImpl<T extends Serializable> implements
 			session.persist(p);
 		}catch(java.lang.IllegalArgumentException illegalArgumentEx){
 			logger.error("Persistence layer error: " + illegalArgumentEx.getStackTrace());
-			PersistenceErrors error;
+			PersistenceError error;
 			if (p == null) {
-				error = PersistenceErrors.ENTITY_NULL;
+				error = PersistenceError.ENTITY_NULL;
 			}else{
-				error = PersistenceErrors.UNIDENTIFIED_ERROR; //illegalArgumentEx.getMessage();
+				error = PersistenceError.UNIDENTIFIED_ERROR; //illegalArgumentEx.getMessage();
 			}
 			throw new PersistenceException(error, illegalArgumentEx.getCause());
 		}
@@ -89,7 +111,7 @@ public abstract class GenericDaoImpl<T extends Serializable> implements
 	/**
 	 * Update entity p. Persists existing entity p.
 	 * 
-	 * @param p
+	 * @param p T Data type of entity
 	 * @throws PersistenceException
 	 */
 	@Override
@@ -101,11 +123,11 @@ public abstract class GenericDaoImpl<T extends Serializable> implements
 			session.merge(p);
 		}catch(java.lang.IllegalArgumentException illegalArgumentEx){
 			logger.error("Persistence layer error: " + illegalArgumentEx.getStackTrace());
-			PersistenceErrors error;
+			PersistenceError error;
 			if (p == null) {
-				error = PersistenceErrors.ENTITY_NULL;
+				error = PersistenceError.ENTITY_NULL;
 			}else{
-				error = PersistenceErrors.UNIDENTIFIED_ERROR; // illegalArgumentEx.getMessage();
+				error = PersistenceError.UNIDENTIFIED_ERROR; // illegalArgumentEx.getMessage();
 			}
 			throw new PersistenceException(error, illegalArgumentEx.getCause());
 		}
@@ -117,7 +139,7 @@ public abstract class GenericDaoImpl<T extends Serializable> implements
 	/**
 	 * Returns a list of entities of the type T (clazz type).
 	 * 
-	 * @return List<T>
+	 * @return List<T> List of entities T type.
 	 * @throws PersistenceException
 	 */
 	@SuppressWarnings("unchecked")
@@ -143,16 +165,17 @@ public abstract class GenericDaoImpl<T extends Serializable> implements
 	 * Made a searching by id.
 	 * 
 	 * @param id
-	 * @return T
+	 * @return T Data type of entity
 	 * @throws PersistenceException
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	public T getById(Long id) throws PersistenceException {
 		Session session = this.getCurrentSession();
 		
 		if (id == null) {
-			logger.error("Persistence layer error: Illegal Argument in getById method, Id is null (" + PersistenceErrors.ARGUMENT_NULL.getMessage() + ")");
-			throw new PersistenceException(PersistenceErrors.ARGUMENT_NULL);
+			logger.error("Persistence layer error: Illegal Argument in getById method, Id is null (" + PersistenceError.ARGUMENT_NULL.getMessage() + ")");
+			throw new PersistenceException(PersistenceError.ARGUMENT_NULL);
 		}
 		
 		T t = (T) session.load(clazz, id.longValue());
@@ -167,10 +190,11 @@ public abstract class GenericDaoImpl<T extends Serializable> implements
 	/**
 	 * Remove entity with id passed.
 	 * 
-	 * @param id
+	 * @param id Entity identifier
 	 * @throws PersistenceException
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	public void removeById(Long id) throws PersistenceException {
 		Session session = this.getCurrentSession();
 		T t = (T) session.load(clazz, id.longValue());
@@ -189,7 +213,7 @@ public abstract class GenericDaoImpl<T extends Serializable> implements
 	/**
 	 * Remove entity T (clazz type) passed.
 	 * 
-	 * @param id
+	 * @param t
 	 * @throws PersistenceException
 	 */
 	@Override
@@ -243,6 +267,7 @@ public abstract class GenericDaoImpl<T extends Serializable> implements
 	 * @return List<T>
 	 * @throws PersistenceException
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
     public List<T> search(Map<String, Object> parameterMap) throws PersistenceException {
     	//logger.debug(clazz.getSimpleName() + " ######### SEARCH ##################" );
@@ -259,7 +284,7 @@ public abstract class GenericDaoImpl<T extends Serializable> implements
         for (String field : fieldName) {
             criteria.add(Restrictions.ilike(field, parameterMap.get(field)));
         }
-        lst = criteria.list();
+        lst = (List<T>) criteria.list();
         
 		if (loggerInfoEnabled && !(lst.isEmpty())){
 			logger.debug("Persistence layer info: " + clazz.getSimpleName()
@@ -276,6 +301,59 @@ public abstract class GenericDaoImpl<T extends Serializable> implements
         return lst;
     }
 
+	/**
+	 * Get Entity T using a SQL query string and SqlQuery object.
+	 * 
+	 * @param sql
+	 * @return
+	 * @throws PersistenceException
+	 */
+	@SuppressWarnings("unchecked")
+	public T executeSqlQuery(String sql) throws PersistenceException {
+		T t = null;
+
+		SQLQuery query = createSqlQuery(sql);
+		
+		try {
+			query.addEntity(clazz);	
+			t = (T) query.uniqueResult();
+		} catch (Exception e) {
+			throw new PersistenceException(e);
+		}
+
+		return t;
+	}
+
+	/**
+	 * Get Entity T using a SQL query string and SqlQuery object with parameters list.
+	 * 
+	 * @param sql For example "SELECT * FROM table WHERE id = ?"
+	 * @param params Parameters list to match with ? in SQL query
+	 * @return Entity T type
+	 * @throws PersistenceException
+	 */
+	@SuppressWarnings("unchecked")
+	public T executeSqlQuery(String sql, List<String> params) throws PersistenceException {
+		T t = null;
+		
+		SQLQuery query = createSqlQuery(sql);
+		
+		try {
+			query.addEntity(clazz);
+			
+			//inserts parameters into sql string replacing ? symbols by order
+			for (int i = 0; i < params.size(); i++){
+				query.setParameter(i, params.get(i));
+			}
+			
+			t = (T) query.uniqueResult();
+		} catch (Exception e) {
+			throw new PersistenceException(e);
+		}
+
+		return t;
+	}
+	
 	/**
 	 * Return true if information logging is allow.
 	 * @return boolean
@@ -296,24 +374,40 @@ public abstract class GenericDaoImpl<T extends Serializable> implements
 	/**
 	 * Get Current Session from Session Factory.
 	 * 
-	 * @return Session
+	 * @return Session Session instance
 	 * @throws PersistenceException
 	 */
-	private Session getCurrentSession() throws PersistenceException{		
+	protected Session getCurrentSession() throws PersistenceException{		
 		Session session = null;
 		
 		try{
 			session = this.sessionFactory.getCurrentSession();
 		}catch(java.lang.NullPointerException nullPpointEx){
 			logger.error("Persistence layer error: " + nullPpointEx.getStackTrace());
-			throw new PersistenceException(PersistenceErrors.SESSION_FACTORY_NULL, nullPpointEx.getCause());
+			throw new PersistenceException(PersistenceError.SESSION_FACTORY_NULL, nullPpointEx.getCause());
 		}catch(Exception ex){
 			logger.error("Persistence layer error: " + ex.getStackTrace());
-			PersistenceErrors error = PersistenceErrors.UNIDENTIFIED_ERROR;
+			PersistenceError error = PersistenceError.UNIDENTIFIED_ERROR;
 			throw new PersistenceException(error, ex.getCause());
 		}
 		
 		return session;
 	}
 	
+    /**
+     * Return a SQLQuery from SQL string passed as argument.
+     *
+     * @param String sql
+     * @return SQLQuery with an instance of the sql query
+     * @throws PersistenceException
+     */
+    protected SQLQuery createSqlQuery(String sql) throws PersistenceException{
+
+        if (sql == null) {
+            throw new PersistenceException(PersistenceError.SQL_IS_NULL);
+        }
+
+        return getCurrentSession().createSQLQuery(sql);
+    }
+
 }

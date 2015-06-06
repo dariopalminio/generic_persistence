@@ -9,8 +9,11 @@ import java.io.Serializable;
 import com.daro.persistence.generic.dao.GenericDao;
 
 /**
+ * Generic Service
+ * 
  * @author Dario Palminio
  * 
+ * @param <T> Data type expected in query return as entity
  */
 public interface GenericService<T extends Serializable> extends GenericDao<T>{
 
