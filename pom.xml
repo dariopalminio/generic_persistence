@@ -16,28 +16,21 @@
 			<url>http://www.gnu.org/copyleft/gpl.html</url>
 			<distribution>GenericPersistence SNAPSHOT</distribution>
 			<comments>Copyright (C) 2015 Dario Palminio</comments>
-			<!-- 
-	GenericPersistence is a java component to persistence layer.
-			
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-			-->
+			<!-- GenericPersistence is a java component to persistence layer. This 
+				program is free software: you can redistribute it and/or modify it under 
+				the terms of the GNU General Public License as published by the Free Software 
+				Foundation, either version 3 of the License, or (at your option) any later 
+				version. This program is distributed in the hope that it will be useful, 
+				but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY 
+				or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for 
+				more details. You should have received a copy of the GNU General Public License 
+				along with this program. If not, see <http://www.gnu.org/licenses/>. -->
 		</license>
 	</licenses>
 
 	<prerequisites>
-	    <!-- Java 7 -->
-	    <!-- IDE Eclipse Luna Service Release 1 (version 4.4.1) or similar -->
+		<!-- Java 7 -->
+		<!-- IDE Eclipse Luna Service Release 1 (version 4.4.1) or similar -->
 		<maven>2.2.1</maven>
 	</prerequisites>
 
@@ -49,7 +42,9 @@
 		<hibernate-jpa-2.0-api.version>1.0.0.Final</hibernate-jpa-2.0-api.version>
 		<org.springframework-version>4.0.3.RELEASE</org.springframework-version>
 		<org.springbyexample.version>1.0.4</org.springbyexample.version>
-		<junit.version>4.8.1</junit.version>
+		<jmockit.version>1.6</jmockit.version>
+		<junit.version>4.8.2</junit.version>
+		<jmockit.coverage.version>0.999.25</jmockit.coverage.version>
 		<hsqldb.version>2.2.8</hsqldb.version>
 		<slf4j.version>1.7.5</slf4j.version>
 		<log4j.version>1.2.17</log4j.version>
@@ -97,7 +92,7 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>${hibernate-validator.version}</version>
 		</dependency>
-		
+
 		<!-- Hibernate JPA -->
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
@@ -168,6 +163,14 @@
 			<type>jar</type>
 		</dependency>
 
+		<!-- JMockit Testing -->
+		<dependency>
+			<groupId>com.googlecode.jmockit</groupId>
+			<artifactId>jmockit</artifactId>
+			<version>${jmockit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		
 		<!-- JUnit -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -189,9 +192,8 @@
 			<artifactId>log4j</artifactId>
 			<version>${log4j.version}</version>
 		</dependency>
-		
-		<!-- Apache Commons Logging 
-		used to org.apache.commons.logging.LogFactory -->
+
+		<!-- Apache Commons Logging used to org.apache.commons.logging.LogFactory -->
 		<dependency>
 			<groupId>commons-logging</groupId>
 			<artifactId>commons-logging</artifactId>
