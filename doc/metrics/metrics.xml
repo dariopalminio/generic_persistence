@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Metrics scope="generic_persistence" type="Project" date="2015-06-07" xmlns="http://metrics.sourceforge.net/2003/Metrics-First-Flat">
+   <Cycle name="com.daro.persistence.generic.dao et al" nodes="3" diameter="2">
+      <Package>com.daro.persistence.generic.dao</Package>
+      <Package>com.daro.persistence.generic.testdata</Package>
+      <Package>com.daro.persistence.generic.service</Package>
+   </Cycle>
+   <Metric id = "NORM" description ="Number of Overridden Methods">
+      <Values per = "type" total = "1" avg = "0.1" stddev = "0.3" max = "1">
+         <Value name="PersonEntity" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="GenericDaoImpl" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="0"/>
+         <Value name="PersistenceException" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="0"/>
+         <Value name="GenericServiceImpl" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="0"/>
+         <Value name="GenericDaoImplTest" source ="GenericDaoImplTest.java" package ="com.daro.persistence.generic.dao" value ="0"/>
+         <Value name="PersistenceErrorsTest" source ="PersistenceErrorsTest.java" package ="com.daro.persistence.generic.error" value ="0"/>
+         <Value name="GenericServiceTest" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="0"/>
+         <Value name="PersonEntityDaoImpl" source ="PersonEntityDaoImpl.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+         <Value name="PersonEntityServiceImpl" source ="PersonEntityServiceImpl.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+         <Value name="PersonPersistence" source ="PersonPersistence.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "NOF" description ="Number of Attributes">
+      <Values per = "type" total = "15" avg = "1.5" stddev = "1.688" max = "4">
+         <Value name="GenericDaoImpl" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="4"/>
+         <Value name="GenericDaoImplTest" source ="GenericDaoImplTest.java" package ="com.daro.persistence.generic.dao" value ="4"/>
+         <Value name="PersonEntity" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="4"/>
+         <Value name="PersistenceException" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="GenericServiceImpl" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="GenericServiceTest" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="PersistenceErrorsTest" source ="PersistenceErrorsTest.java" package ="com.daro.persistence.generic.error" value ="0"/>
+         <Value name="PersonEntityDaoImpl" source ="PersonEntityDaoImpl.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+         <Value name="PersonEntityServiceImpl" source ="PersonEntityServiceImpl.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+         <Value name="PersonPersistence" source ="PersonPersistence.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "NSC" description ="Number of Children">
+      <Values per = "type" total = "4" avg = "0.4" stddev = "0.917" max = "3">
+         <Value name="GenericDaoImpl" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="3"/>
+         <Value name="GenericServiceImpl" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="PersistenceException" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="0"/>
+         <Value name="GenericDaoImplTest" source ="GenericDaoImplTest.java" package ="com.daro.persistence.generic.dao" value ="0"/>
+         <Value name="PersistenceErrorsTest" source ="PersistenceErrorsTest.java" package ="com.daro.persistence.generic.error" value ="0"/>
+         <Value name="GenericServiceTest" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="0"/>
+         <Value name="PersonEntity" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+         <Value name="PersonEntityDaoImpl" source ="PersonEntityDaoImpl.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+         <Value name="PersonEntityServiceImpl" source ="PersonEntityServiceImpl.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+         <Value name="PersonPersistence" source ="PersonPersistence.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "NOC" description ="Number of Classes">
+      <Values per = "packageFragment" total = "10" avg = "1.429" stddev = "1.05" max = "4">
+         <Value name="com.daro.persistence.generic.testdata" package ="com.daro.persistence.generic.testdata" value ="4"/>
+         <Value name="com.daro.persistence.generic.dao" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="com.daro.persistence.generic.error" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="com.daro.persistence.generic.service" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="com.daro.persistence.generic.dao" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="com.daro.persistence.generic.error" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="com.daro.persistence.generic.service" package ="com.daro.persistence.generic.service" value ="1"/>
+      </Values>
+   </Metric>
+   <Metric id = "MLOC" description ="Method Lines of Code">
+      <Values per = "method" total = "327" avg = "5.031" stddev = "6.435" max = "25">
+         <Value name="executeSqlQuery" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="25"/>
+         <Value name="testPersonEntityService" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="21"/>
+         <Value name="testPersonEntityServiceAddExceptions" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="21"/>
+         <Value name="testPersonEntityServiceUpdateExceptions" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="21"/>
+         <Value name="search" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="19"/>
+         <Value name="add" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="15"/>
+         <Value name="update" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="15"/>
+         <Value name="testPersonEntityServiceRemove" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="15"/>
+         <Value name="executeSqlQuery" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="12"/>
+         <Value name="getCurrentSession" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="12"/>
+         <Value name="removeById" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="12"/>
+         <Value name="testAdd" source ="GenericDaoImplTest.java" package ="com.daro.persistence.generic.dao" value ="12"/>
+         <Value name="getByField" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="11"/>
+         <Value name="list" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="11"/>
+         <Value name="remove" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="11"/>
+         <Value name="getById" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="10"/>
+         <Value name="executeSqlQuery" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="9"/>
+         <Value name="testGetCurrentSession" source ="GenericDaoImplTest.java" package ="com.daro.persistence.generic.dao" value ="8"/>
+         <Value name="setUp" source ="GenericDaoImplTest.java" package ="com.daro.persistence.generic.dao" value ="7"/>
+         <Value name="getGenericTypeOfClassAtRuntime" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="6"/>
+         <Value name="createSqlQuery" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="4"/>
+         <Value name="PersonEntity" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="3"/>
+         <Value name="GenericDaoImpl" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="2"/>
+         <Value name="GenericDaoImpl" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="2"/>
+         <Value name="PersistenceException" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="2"/>
+         <Value name="PersistenceException" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="2"/>
+         <Value name="PersistenceException" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="2"/>
+         <Value name="testGetSessionFactory" source ="GenericDaoImplTest.java" package ="com.daro.persistence.generic.dao" value ="2"/>
+         <Value name="getSessionFactory" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="isLoggerInfoEnabled" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="setLoggerInfoEnabled" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="setSessionFactory" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="getPersistenceError" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="setPersistenceError" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="add" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="executeSqlQuery" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="executeSqlQuery" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="getByField" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="getById" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="getDao" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="getSessionFactory" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="isLoggerInfoEnabled" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="list" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="removeById" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="remove" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="search" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="setDao" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="setLoggerInfoEnabled" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="setSessionFactory" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="update" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="testGetWord" source ="PersistenceErrorsTest.java" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="testToString" source ="PersistenceErrorsTest.java" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="testPersonEntityServiceAutowired" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="getDniCode" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="getFirstName" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="getFullName" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="getId" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="getLastName" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="setDniCode" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="setFirstName" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="setId" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="setLastName" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="toString" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="PersistenceException" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="0"/>
+         <Value name="PersonEntity" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "NOM" description ="Number of Methods">
+      <Values per = "type" total = "65" avg = "6.5" stddev = "6.561" max = "19">
+         <Value name="GenericDaoImpl" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="19"/>
+         <Value name="GenericServiceImpl" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="16"/>
+         <Value name="PersonEntity" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="12"/>
+         <Value name="PersistenceException" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="6"/>
+         <Value name="GenericServiceTest" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="6"/>
+         <Value name="GenericDaoImplTest" source ="GenericDaoImplTest.java" package ="com.daro.persistence.generic.dao" value ="4"/>
+         <Value name="PersistenceErrorsTest" source ="PersistenceErrorsTest.java" package ="com.daro.persistence.generic.error" value ="2"/>
+         <Value name="PersonEntityDaoImpl" source ="PersonEntityDaoImpl.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+         <Value name="PersonEntityServiceImpl" source ="PersonEntityServiceImpl.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+         <Value name="PersonPersistence" source ="PersonPersistence.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "NBD" description ="Nested Block Depth" max ="5" hint ="use Extract-method to split the method up">
+      <Values per = "method" avg = "1.323" stddev = "0.558" max = "3">
+         <Value name="add" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="3"/>
+         <Value name="executeSqlQuery" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="3"/>
+         <Value name="update" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="3"/>
+         <Value name="createSqlQuery" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="2"/>
+         <Value name="executeSqlQuery" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="2"/>
+         <Value name="getByField" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="2"/>
+         <Value name="getById" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="2"/>
+         <Value name="getCurrentSession" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="2"/>
+         <Value name="list" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="2"/>
+         <Value name="removeById" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="2"/>
+         <Value name="remove" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="2"/>
+         <Value name="search" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="2"/>
+         <Value name="setUp" source ="GenericDaoImplTest.java" package ="com.daro.persistence.generic.dao" value ="2"/>
+         <Value name="testAdd" source ="GenericDaoImplTest.java" package ="com.daro.persistence.generic.dao" value ="2"/>
+         <Value name="testGetCurrentSession" source ="GenericDaoImplTest.java" package ="com.daro.persistence.generic.dao" value ="2"/>
+         <Value name="executeSqlQuery" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="2"/>
+         <Value name="testPersonEntityServiceAddExceptions" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="2"/>
+         <Value name="testPersonEntityServiceUpdateExceptions" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="2"/>
+         <Value name="GenericDaoImpl" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="GenericDaoImpl" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="getGenericTypeOfClassAtRuntime" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="getSessionFactory" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="isLoggerInfoEnabled" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="setLoggerInfoEnabled" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="setSessionFactory" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="PersistenceException" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="PersistenceException" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="PersistenceException" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="PersistenceException" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="getPersistenceError" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="setPersistenceError" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="add" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="executeSqlQuery" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="executeSqlQuery" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="getByField" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="getById" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="getDao" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="getSessionFactory" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="isLoggerInfoEnabled" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="list" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="removeById" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="remove" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="search" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="setDao" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="setLoggerInfoEnabled" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="setSessionFactory" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="update" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="testGetSessionFactory" source ="GenericDaoImplTest.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="testGetWord" source ="PersistenceErrorsTest.java" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="testToString" source ="PersistenceErrorsTest.java" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="testPersonEntityService" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="testPersonEntityServiceAutowired" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="testPersonEntityServiceRemove" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="PersonEntity" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="PersonEntity" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="getDniCode" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="getFirstName" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="getFullName" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="getId" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="getLastName" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="setDniCode" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="setFirstName" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="setId" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="setLastName" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="toString" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+      </Values>
+   </Metric>
+   <Metric id = "DIT" description ="Depth of Inheritance Tree">
+      <Values per = "type" avg = "1.5" stddev = "0.671" max = "3">
+         <Value name="PersistenceException" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="3"/>
+         <Value name="PersonEntityDaoImpl" source ="PersonEntityDaoImpl.java" package ="com.daro.persistence.generic.testdata" value ="2"/>
+         <Value name="PersonEntityServiceImpl" source ="PersonEntityServiceImpl.java" package ="com.daro.persistence.generic.testdata" value ="2"/>
+         <Value name="PersonPersistence" source ="PersonPersistence.java" package ="com.daro.persistence.generic.testdata" value ="2"/>
+         <Value name="GenericDaoImpl" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="GenericServiceImpl" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="GenericDaoImplTest" source ="GenericDaoImplTest.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="PersistenceErrorsTest" source ="PersistenceErrorsTest.java" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="GenericServiceTest" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="PersonEntity" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+      </Values>
+   </Metric>
+   <Metric id = "NOP" description ="Number of Packages">
+      <Value value="7"/>
+   </Metric>
+   <Metric id = "CA" description ="Afferent Coupling">
+      <Values per = "packageFragment" avg = "2" stddev = "2.07" max = "5">
+         <Value name="com.daro.persistence.generic.dao" package ="com.daro.persistence.generic.dao" value ="5"/>
+         <Value name="com.daro.persistence.generic.error" package ="com.daro.persistence.generic.error" value ="5"/>
+         <Value name="com.daro.persistence.generic.service" package ="com.daro.persistence.generic.service" value ="2"/>
+         <Value name="com.daro.persistence.generic.testdata" package ="com.daro.persistence.generic.testdata" value ="2"/>
+         <Value name="com.daro.persistence.generic.dao" package ="com.daro.persistence.generic.dao" value ="0"/>
+         <Value name="com.daro.persistence.generic.error" package ="com.daro.persistence.generic.error" value ="0"/>
+         <Value name="com.daro.persistence.generic.service" package ="com.daro.persistence.generic.service" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "NOI" description ="Number of Interfaces">
+      <Values per = "packageFragment" total = "4" avg = "0.571" stddev = "0.728" max = "2">
+         <Value name="com.daro.persistence.generic.testdata" package ="com.daro.persistence.generic.testdata" value ="2"/>
+         <Value name="com.daro.persistence.generic.dao" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="com.daro.persistence.generic.service" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="com.daro.persistence.generic.error" package ="com.daro.persistence.generic.error" value ="0"/>
+         <Value name="com.daro.persistence.generic.dao" package ="com.daro.persistence.generic.dao" value ="0"/>
+         <Value name="com.daro.persistence.generic.error" package ="com.daro.persistence.generic.error" value ="0"/>
+         <Value name="com.daro.persistence.generic.service" package ="com.daro.persistence.generic.service" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "VG" description ="McCabe Cyclomatic Complexity" max ="10" hint ="use Extract-method to split the method up">
+      <Values per = "method" avg = "1.492" stddev = "0.963" max = "4">
+         <Value name="add" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="4"/>
+         <Value name="removeById" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="4"/>
+         <Value name="remove" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="4"/>
+         <Value name="search" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="4"/>
+         <Value name="update" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="4"/>
+         <Value name="executeSqlQuery" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="3"/>
+         <Value name="getByField" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="3"/>
+         <Value name="getById" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="3"/>
+         <Value name="getCurrentSession" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="3"/>
+         <Value name="list" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="3"/>
+         <Value name="testPersonEntityServiceAddExceptions" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="3"/>
+         <Value name="testPersonEntityServiceUpdateExceptions" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="3"/>
+         <Value name="createSqlQuery" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="2"/>
+         <Value name="executeSqlQuery" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="2"/>
+         <Value name="executeSqlQuery" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="2"/>
+         <Value name="GenericDaoImpl" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="GenericDaoImpl" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="getGenericTypeOfClassAtRuntime" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="getSessionFactory" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="isLoggerInfoEnabled" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="setLoggerInfoEnabled" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="setSessionFactory" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="PersistenceException" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="PersistenceException" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="PersistenceException" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="PersistenceException" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="getPersistenceError" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="setPersistenceError" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="add" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="executeSqlQuery" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="executeSqlQuery" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="getByField" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="getById" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="getDao" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="getSessionFactory" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="isLoggerInfoEnabled" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="list" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="removeById" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="remove" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="search" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="setDao" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="setLoggerInfoEnabled" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="setSessionFactory" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="update" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="setUp" source ="GenericDaoImplTest.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="testAdd" source ="GenericDaoImplTest.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="testGetCurrentSession" source ="GenericDaoImplTest.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="testGetSessionFactory" source ="GenericDaoImplTest.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="testGetWord" source ="PersistenceErrorsTest.java" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="testToString" source ="PersistenceErrorsTest.java" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="testPersonEntityService" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="testPersonEntityServiceAutowired" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="testPersonEntityServiceRemove" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="PersonEntity" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="PersonEntity" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="getDniCode" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="getFirstName" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="getFullName" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="getId" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="getLastName" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="setDniCode" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="setFirstName" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="setId" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="setLastName" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="toString" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+      </Values>
+   </Metric>
+   <Metric id = "TLOC" description ="Total Lines of Code">
+      <Value value="706"/>
+   </Metric>
+   <Metric id = "RMI" description ="Instability">
+      <Values per = "packageFragment" avg = "0.643" stddev = "0.368" max = "1">
+         <Value name="com.daro.persistence.generic.dao" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="com.daro.persistence.generic.error" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="com.daro.persistence.generic.service" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="com.daro.persistence.generic.testdata" package ="com.daro.persistence.generic.testdata" value ="0.714"/>
+         <Value name="com.daro.persistence.generic.service" package ="com.daro.persistence.generic.service" value ="0.5"/>
+         <Value name="com.daro.persistence.generic.dao" package ="com.daro.persistence.generic.dao" value ="0.286"/>
+         <Value name="com.daro.persistence.generic.error" package ="com.daro.persistence.generic.error" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "PAR" description ="Number of Parameters" max ="5" hint ="Move invoked method or pass an object">
+      <Values per = "method" avg = "0.631" stddev = "0.692" max = "3">
+         <Value name="PersonEntity" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="3"/>
+         <Value name="executeSqlQuery" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="2"/>
+         <Value name="getByField" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="2"/>
+         <Value name="PersistenceException" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="2"/>
+         <Value name="executeSqlQuery" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="2"/>
+         <Value name="getByField" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="2"/>
+         <Value name="GenericDaoImpl" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="add" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="createSqlQuery" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="executeSqlQuery" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="getById" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="removeById" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="remove" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="search" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="setLoggerInfoEnabled" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="setSessionFactory" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="update" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="PersistenceException" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="PersistenceException" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="setPersistenceError" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="add" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="executeSqlQuery" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="getById" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="removeById" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="remove" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="search" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="setDao" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="setLoggerInfoEnabled" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="setSessionFactory" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="update" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="setDniCode" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="setFirstName" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="setId" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="setLastName" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="GenericDaoImpl" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="0"/>
+         <Value name="getCurrentSession" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="0"/>
+         <Value name="getGenericTypeOfClassAtRuntime" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="0"/>
+         <Value name="getSessionFactory" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="0"/>
+         <Value name="isLoggerInfoEnabled" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="0"/>
+         <Value name="list" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="0"/>
+         <Value name="PersistenceException" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="0"/>
+         <Value name="getPersistenceError" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="0"/>
+         <Value name="getDao" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="0"/>
+         <Value name="getSessionFactory" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="0"/>
+         <Value name="isLoggerInfoEnabled" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="0"/>
+         <Value name="list" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="0"/>
+         <Value name="setUp" source ="GenericDaoImplTest.java" package ="com.daro.persistence.generic.dao" value ="0"/>
+         <Value name="testAdd" source ="GenericDaoImplTest.java" package ="com.daro.persistence.generic.dao" value ="0"/>
+         <Value name="testGetCurrentSession" source ="GenericDaoImplTest.java" package ="com.daro.persistence.generic.dao" value ="0"/>
+         <Value name="testGetSessionFactory" source ="GenericDaoImplTest.java" package ="com.daro.persistence.generic.dao" value ="0"/>
+         <Value name="testGetWord" source ="PersistenceErrorsTest.java" package ="com.daro.persistence.generic.error" value ="0"/>
+         <Value name="testToString" source ="PersistenceErrorsTest.java" package ="com.daro.persistence.generic.error" value ="0"/>
+         <Value name="executeSqlQuery" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="0"/>
+         <Value name="testPersonEntityService" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="0"/>
+         <Value name="testPersonEntityServiceAddExceptions" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="0"/>
+         <Value name="testPersonEntityServiceAutowired" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="0"/>
+         <Value name="testPersonEntityServiceRemove" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="0"/>
+         <Value name="testPersonEntityServiceUpdateExceptions" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="0"/>
+         <Value name="PersonEntity" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+         <Value name="getDniCode" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+         <Value name="getFirstName" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+         <Value name="getFullName" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+         <Value name="getId" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+         <Value name="getLastName" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+         <Value name="toString" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "LCOM" description ="Lack of Cohesion of Methods">
+      <Values per = "type" avg = "0.165" stddev = "0.264" max = "0.75">
+         <Value name="PersonEntity" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="0.75"/>
+         <Value name="GenericDaoImpl" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="0.482"/>
+         <Value name="GenericDaoImplTest" source ="GenericDaoImplTest.java" package ="com.daro.persistence.generic.dao" value ="0.417"/>
+         <Value name="PersistenceException" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="0"/>
+         <Value name="GenericServiceImpl" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="0"/>
+         <Value name="PersistenceErrorsTest" source ="PersistenceErrorsTest.java" package ="com.daro.persistence.generic.error" value ="0"/>
+         <Value name="GenericServiceTest" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="0"/>
+         <Value name="PersonEntityDaoImpl" source ="PersonEntityDaoImpl.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+         <Value name="PersonEntityServiceImpl" source ="PersonEntityServiceImpl.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+         <Value name="PersonPersistence" source ="PersonPersistence.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "CE" description ="Efferent Coupling">
+      <Values per = "packageFragment" avg = "1.714" stddev = "1.485" max = "5">
+         <Value name="com.daro.persistence.generic.testdata" package ="com.daro.persistence.generic.testdata" value ="5"/>
+         <Value name="com.daro.persistence.generic.dao" package ="com.daro.persistence.generic.dao" value ="2"/>
+         <Value name="com.daro.persistence.generic.service" package ="com.daro.persistence.generic.service" value ="2"/>
+         <Value name="com.daro.persistence.generic.dao" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="com.daro.persistence.generic.error" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="com.daro.persistence.generic.service" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="com.daro.persistence.generic.error" package ="com.daro.persistence.generic.error" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "NSM" description ="Number of Static Methods">
+      <Values per = "type" total = "0" avg = "0" stddev = "0" max = "0">
+         <Value name="GenericDaoImpl" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="0"/>
+         <Value name="PersistenceException" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="0"/>
+         <Value name="GenericServiceImpl" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="0"/>
+         <Value name="GenericDaoImplTest" source ="GenericDaoImplTest.java" package ="com.daro.persistence.generic.dao" value ="0"/>
+         <Value name="PersistenceErrorsTest" source ="PersistenceErrorsTest.java" package ="com.daro.persistence.generic.error" value ="0"/>
+         <Value name="GenericServiceTest" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="0"/>
+         <Value name="PersonEntity" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+         <Value name="PersonEntityDaoImpl" source ="PersonEntityDaoImpl.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+         <Value name="PersonEntityServiceImpl" source ="PersonEntityServiceImpl.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+         <Value name="PersonPersistence" source ="PersonPersistence.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "RMD" description ="Normalized Distance">
+      <Values per = "packageFragment" avg = "0.262" stddev = "0.349" max = "1">
+         <Value name="com.daro.persistence.generic.error" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="com.daro.persistence.generic.service" package ="com.daro.persistence.generic.service" value ="0.5"/>
+         <Value name="com.daro.persistence.generic.dao" package ="com.daro.persistence.generic.dao" value ="0.286"/>
+         <Value name="com.daro.persistence.generic.testdata" package ="com.daro.persistence.generic.testdata" value ="0.048"/>
+         <Value name="com.daro.persistence.generic.dao" package ="com.daro.persistence.generic.dao" value ="0"/>
+         <Value name="com.daro.persistence.generic.error" package ="com.daro.persistence.generic.error" value ="0"/>
+         <Value name="com.daro.persistence.generic.service" package ="com.daro.persistence.generic.service" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "RMA" description ="Abstractness">
+      <Values per = "packageFragment" avg = "0.333" stddev = "0.436" max = "1">
+         <Value name="com.daro.persistence.generic.dao" package ="com.daro.persistence.generic.dao" value ="1"/>
+         <Value name="com.daro.persistence.generic.service" package ="com.daro.persistence.generic.service" value ="1"/>
+         <Value name="com.daro.persistence.generic.testdata" package ="com.daro.persistence.generic.testdata" value ="0.333"/>
+         <Value name="com.daro.persistence.generic.error" package ="com.daro.persistence.generic.error" value ="0"/>
+         <Value name="com.daro.persistence.generic.dao" package ="com.daro.persistence.generic.dao" value ="0"/>
+         <Value name="com.daro.persistence.generic.error" package ="com.daro.persistence.generic.error" value ="0"/>
+         <Value name="com.daro.persistence.generic.service" package ="com.daro.persistence.generic.service" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "SIX" description ="Specialization Index">
+      <Values per = "type" avg = "0.008" stddev = "0.025" max = "0.083">
+         <Value name="PersonEntity" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="0.083"/>
+         <Value name="GenericDaoImpl" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="0"/>
+         <Value name="PersistenceException" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="0"/>
+         <Value name="GenericServiceImpl" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="0"/>
+         <Value name="GenericDaoImplTest" source ="GenericDaoImplTest.java" package ="com.daro.persistence.generic.dao" value ="0"/>
+         <Value name="PersistenceErrorsTest" source ="PersistenceErrorsTest.java" package ="com.daro.persistence.generic.error" value ="0"/>
+         <Value name="GenericServiceTest" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="0"/>
+         <Value name="PersonEntityDaoImpl" source ="PersonEntityDaoImpl.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+         <Value name="PersonEntityServiceImpl" source ="PersonEntityServiceImpl.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+         <Value name="PersonPersistence" source ="PersonPersistence.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "WMC" description ="Weighted methods per Class">
+      <Values per = "type" total = "97" avg = "9.7" stddev = "13.237" max = "46">
+         <Value name="GenericDaoImpl" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="46"/>
+         <Value name="GenericServiceImpl" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="16"/>
+         <Value name="PersonEntity" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="12"/>
+         <Value name="GenericServiceTest" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="11"/>
+         <Value name="PersistenceException" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="6"/>
+         <Value name="GenericDaoImplTest" source ="GenericDaoImplTest.java" package ="com.daro.persistence.generic.dao" value ="4"/>
+         <Value name="PersistenceErrorsTest" source ="PersistenceErrorsTest.java" package ="com.daro.persistence.generic.error" value ="2"/>
+         <Value name="PersonEntityDaoImpl" source ="PersonEntityDaoImpl.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+         <Value name="PersonEntityServiceImpl" source ="PersonEntityServiceImpl.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+         <Value name="PersonPersistence" source ="PersonPersistence.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "NSF" description ="Number of Static Attributes">
+      <Values per = "type" total = "3" avg = "0.3" stddev = "0.458" max = "1">
+         <Value name="PersistenceException" source ="PersistenceException.java" package ="com.daro.persistence.generic.error" value ="1"/>
+         <Value name="PersonEntity" source ="PersonEntity.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="PersonEntityServiceImpl" source ="PersonEntityServiceImpl.java" package ="com.daro.persistence.generic.testdata" value ="1"/>
+         <Value name="GenericDaoImpl" source ="GenericDaoImpl.java" package ="com.daro.persistence.generic.dao" value ="0"/>
+         <Value name="GenericServiceImpl" source ="GenericServiceImpl.java" package ="com.daro.persistence.generic.service" value ="0"/>
+         <Value name="GenericDaoImplTest" source ="GenericDaoImplTest.java" package ="com.daro.persistence.generic.dao" value ="0"/>
+         <Value name="PersistenceErrorsTest" source ="PersistenceErrorsTest.java" package ="com.daro.persistence.generic.error" value ="0"/>
+         <Value name="GenericServiceTest" source ="GenericServiceTest.java" package ="com.daro.persistence.generic.service" value ="0"/>
+         <Value name="PersonEntityDaoImpl" source ="PersonEntityDaoImpl.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+         <Value name="PersonPersistence" source ="PersonPersistence.java" package ="com.daro.persistence.generic.testdata" value ="0"/>
+      </Values>
+   </Metric>
+   </Metrics>
