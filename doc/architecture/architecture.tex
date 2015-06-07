@@ -34,6 +34,7 @@ Documentation control
 \multicolumn{1}{|l|}{Date}       & \multicolumn{1}{l|}{Author}         & \multicolumn{1}{l|}{Version} & \multicolumn{1}{l|}{Detail}   &  \\ \cline{1-4}
 \multicolumn{1}{|l|}{05/05/2015} & \multicolumn{1}{l|}{Dario Palminio} & \multicolumn{1}{l|}{1.0}     & \multicolumn{1}{l|}{Creation} &  \\ \cline{1-4}
 \multicolumn{1}{|l|}{04/06/2015} & \multicolumn{1}{l|}{Dario Palminio} & \multicolumn{1}{l|}{1.0}     & \multicolumn{1}{l|}{Add info} &  \\ \cline{1-4}
+\multicolumn{1}{|l|}{06/06/2015} & \multicolumn{1}{l|}{Dario Palminio} & \multicolumn{1}{l|}{1.0}     & \multicolumn{1}{l|}{Add integration section} &  \\ \cline{1-4}
                                  &                                     &                              &                               &  \\
                                  &                                     &                              &                               & 
 \end{tabular}
@@ -106,6 +107,30 @@ The example is shown in the following diagram:
   \caption{Example of how to use - diagram}
   \centering
   \label{fig:generic_persistence_class_diagram_to_use} %\ref{fig:generic_persistence_class_diagram_to_use}
+\end{figure}
+
+\pagebreak
+\subsection{Integration}
+The integration is importing this library and configure it via spring application context file (For example you can see test-spring-context.xml file).
+
+The steps required to integrate the library into a java project are:
+
+\begin{itemize}
+\item Import library into java project.
+\item Add database connector driver (for example mysql-connector-java).
+\item To inject DataSourse (via spring application context file).
+\item To inject SessionFactory and set each entity to be recognized by the SessionFactory (via spring application context file).
+\item To inject Transaction Manager (via spring application context file).
+\item Inject SessionFactory each Class Dao we use in the project.
+\end{itemize}
+
+The classes are integrated with Hibernate-Spring as shown in the diagram:
+
+\begin{figure}[h] % Diagram
+  \includegraphics[width=\textwidth]{generic_persistence_integration_diagram}
+  \caption{Hibernate-Spring Integration diagram}
+  \centering
+  \label{fig:generic_persistence_integration_diagram} %\ref{fig:generic_persistence_integration_diagram}
 \end{figure}
 
 \end{document}
