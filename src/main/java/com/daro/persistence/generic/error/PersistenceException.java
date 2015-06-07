@@ -18,7 +18,7 @@ public class PersistenceException extends Exception {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private PersistenceError persistenceErrors;
+	private PersistenceError persistenceError;
 	
 	/**
 	 * Constructor.
@@ -31,28 +31,48 @@ public class PersistenceException extends Exception {
 	 * 
 	 * @param persistenceErrors
 	 */
-	public PersistenceException(PersistenceError persistenceErrors){
-		super(persistenceErrors.getMessage());
-		this.persistenceErrors=persistenceErrors;
+	public PersistenceException(PersistenceError persistenceError){
+		super(persistenceError.getMessage());
+		this.persistenceError = persistenceError;
 	}
 
+	/**
+	 * Constructor using other Exception or Throwable.
+	 * 
+	 * @param cause
+	 */
 	public PersistenceException(Throwable cause){
 		super(cause);
-		this.persistenceErrors = persistenceErrors.PERSISTENCE_INTERNAL_ERROR;
+		this.persistenceError = PersistenceError.PERSISTENCE_INTERNAL_ERROR;
 	}
 
-	public PersistenceException(PersistenceError persistenceErrors, Throwable cause){
-		super(persistenceErrors.getMessage(), cause);
-		this.persistenceErrors = persistenceErrors;
+	/**
+	 * Constructor with PersistenceError and Throwable as arguments
+	 * 
+	 * @param persistenceErrors
+	 * @param cause
+	 */
+	public PersistenceException(PersistenceError persistenceError, Throwable cause){
+		super(persistenceError.getMessage(), cause);
+		this.persistenceError = persistenceError;
 	}
 
-	public PersistenceError getPersistenceErrors() {
-		return persistenceErrors;
+	/**
+	 * Get PersistenceError
+	 * 
+	 * @return
+	 */
+	public PersistenceError getPersistenceError() {
+		return persistenceError;
 	}
 
-	public void setPersistenceErrors(PersistenceError persistenceErrors) {
-		this.persistenceErrors = persistenceErrors;
+	/**
+	 * Set PersistenceError
+	 * 
+	 * @param persistenceError
+	 */
+	public void setPersistenceError(PersistenceError persistenceError) {
+		this.persistenceError = persistenceError;
 	}
-
 	
 }

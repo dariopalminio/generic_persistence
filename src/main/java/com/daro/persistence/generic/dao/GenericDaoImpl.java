@@ -16,6 +16,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.daro.persistence.generic.error.PersistenceError;
@@ -39,8 +40,9 @@ public abstract class GenericDaoImpl<T extends Serializable> implements
 	private Logger logger;
 
 	private Class<T> clazz; //entity class expected in query return
-
-	private SessionFactory sessionFactory;
+	
+	@Autowired
+	public SessionFactory sessionFactory;
 
     /**
      * Default Constructor
