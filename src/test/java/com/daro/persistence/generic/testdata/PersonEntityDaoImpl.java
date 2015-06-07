@@ -10,9 +10,5 @@ import com.daro.persistence.generic.dao.GenericDaoImpl;
  */
 public class PersonEntityDaoImpl extends GenericDaoImpl<PersonEntity> implements PersonEntityDao {
 
-	public PersonEntityDaoImpl() {
-		setClazz(PersonEntity.class);
-	}
-
 
 }

@@ -5,6 +5,7 @@
 package com.daro.persistence.generic.dao;
 
 import java.io.Serializable;
+import java.lang.reflect.ParameterizedType;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -39,7 +40,7 @@ public abstract class GenericDaoImpl<T extends Serializable> implements
 
 	private Logger logger;
 
-	private Class<T> clazz; //entity class expected in query return
+	private Class<T> clazz; //generic type of class or entity class expected in query return
 	
 	@Autowired
 	public SessionFactory sessionFactory;
@@ -47,7 +48,9 @@ public abstract class GenericDaoImpl<T extends Serializable> implements
     /**
      * Default Constructor
      */
-    protected GenericDaoImpl() {
+    protected GenericDaoImpl() {    	
+    	this.clazz = getGenericTypeOfClassAtRuntime();    
+    	this.logger = Logger.getLogger(this.clazz); //Initialize Logger
     }
     
 	/**
@@ -56,11 +59,24 @@ public abstract class GenericDaoImpl<T extends Serializable> implements
 	 * @param clazz
 	 * @param sessionFactory
 	 */
-	protected GenericDaoImpl(Class<T> clazz, SessionFactory sessionFactory) {
-		this.clazz = clazz;
+	protected GenericDaoImpl(SessionFactory sessionFactory) {
+		this(); //call default constructor
 		this.sessionFactory = sessionFactory;
 	}	
 
+	/**
+	 * Get generic type of class at runtime.
+	 * @return
+	 */
+    @SuppressWarnings({ "unchecked" })
+	private Class<T> getGenericTypeOfClassAtRuntime(){
+    	
+    	return (Class<T>)
+                ((ParameterizedType)getClass()
+                .getGenericSuperclass())
+                .getActualTypeArguments()[0];
+    }
+    
 	/**
 	 * Get SessionFactory
 	 */
@@ -77,16 +93,6 @@ public abstract class GenericDaoImpl<T extends Serializable> implements
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}		
-
-	/**
-	 * Set specific T class for Java Generic.
-	 * 
-	 * @param clazzToSet
-	 */
-	public void setClazz(Class<T> clazzToSet) {
-		this.clazz = clazzToSet;
-		this.logger = Logger.getLogger(this.clazz); //Initialize Logger
-	}
 
 	/**
 	 * Persist new entity p.

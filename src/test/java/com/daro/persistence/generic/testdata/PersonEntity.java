@@ -32,6 +32,14 @@ public class PersonEntity implements java.io.Serializable {
 	@Column(name="DNICODE", nullable = false, length = 40)
 	private String dniCode;
 
+	public PersonEntity(){
+	}
+	
+	public PersonEntity(String firstName, String lastName, String dniCode){
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.dniCode = dniCode;
+	}
 
 	public Long getId() {
 		return id;

@@ -81,8 +81,25 @@ The classes described below belong to the package named "com.daro.persistence.ge
 \end{figure}
 
 \pagebreak
-\subsubsection{Example of Client}
+\subsubsection{Example of a Simple Client}
 Here's a way to use the component. This example corresponds to the component testing.
+To use of simple manner the library from code is necessary to extend the GenericDaoImpl class with an entity class (POJO).
+For example, to persist an entity named PersonEntity can use a class named PersonPersistence that extends GenericDaoImpl.
+The example shown in the following diagram:
+
+\begin{figure}[h] % Diagram
+  \includegraphics[width=\textwidth]{generic_persistence_class_diagram_to_use_simple}
+  \caption{Example of how to use on simple manner - diagram}
+  \centering
+  \label{fig:generic_persistence_class_diagram_to_use_simple} %\ref{fig:generic_persistence_class_diagram_to_use_simple}
+\end{figure}
+
+\pagebreak
+\subsubsection{Example of a Complex Client}
+Here's a way to use the component. This example corresponds to the component testing.
+The component can also be used in a more complex manner which allows greater scalability. 
+This way is using the services layer. This requires extending the DAO class and Service class.
+The example is shown in the following diagram:
 
 \begin{figure}[h] % Diagram
   \includegraphics[width=\textwidth]{generic_persistence_class_diagram_to_use}
