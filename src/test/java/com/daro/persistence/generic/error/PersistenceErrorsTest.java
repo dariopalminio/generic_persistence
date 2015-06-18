@@ -18,4 +18,9 @@ public class PersistenceErrorsTest {
 		assertEquals(PersistenceError.ENTITY_NULL.toString(), PersistenceError.ENTITY_NULL.getMessage());
 	}
 	
+	@Test
+	public void testGetErrorCodeFromMessage() {
+		assertEquals(0, PersistenceError.getErrorCodeFromMessage(PersistenceError.UNIDENTIFIED_ERROR.getMessage()));
+	}
+	
 }
