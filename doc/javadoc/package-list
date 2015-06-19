@@ -1,0 +1,4 @@
+com.daro.persistence.generic.dao
+com.daro.persistence.generic.error
+com.daro.persistence.generic.service
+com.daro.persistence.generic.testdata
